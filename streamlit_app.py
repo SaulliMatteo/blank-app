@@ -9,7 +9,7 @@ import numpy as np
 import pickle
 import streamlit as st
 
-model = pickle.load(open('C:/Users/Matteo/Desktop/Informatica/Python/ML/diatabes_pred_trained.sav', 'rb'))
+model = pickle.load(open('diatabes_pred_trained.sav', 'rb'))
 
 def diatabes_pred(input_data):
 
