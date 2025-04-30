@@ -8,8 +8,10 @@ Created on Tue Apr 29 01:43:29 2025
 import numpy as np
 import pickle
 import streamlit as st
-
-model = pickle.load(open('diatabes_pred_trained.sav', 'rb'))
+try:
+    model = pickle.load(open('diatabes_pred_trained.sav', 'rb'))
+except:
+    st.error("path non trovato")
 
 def diatabes_pred(input_data):
 
