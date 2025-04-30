@@ -8,8 +8,6 @@ Created on Tue Apr 29 01:43:29 2025
 import numpy as np
 import pickle
 import streamlit as st
-import os
-st.write("Working dir:", os.getcwd())
 
 try:
     model = pickle.load(open('diatabes_pred_trained.sav', 'rb'))
