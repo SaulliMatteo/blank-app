@@ -10,9 +10,9 @@ import streamlit as st
 import numpy as np
 from streamlit_option_menu import option_menu
 
-diabetes_model = pickle.load(open('diatabes_webApp\diatabes_pred_trained.sav', 'rb'))
-heart_model = pickle.load(open('diatabes_webApp\heart_deseas_trained.sav', 'rb'))
-parkinson_model = pickle.load(open('diatabes_webApp\parkinson_trained.sav', 'rb'))
+diabetes_model = pickle.load(open('diatabes_webApp/diatabes_pred_trained.sav', 'rb'))
+heart_model = pickle.load(open('diatabes_webApp/heart_deseas_trained.sav', 'rb'))
+parkinson_model = pickle.load(open('diatabes_webApp/parkinson_trained.sav', 'rb'))
 
 if __name__ == "__main__":
     with st.sidebar:
