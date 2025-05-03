@@ -114,7 +114,7 @@ if __name__ == "__main__":
         if st.button('test result'):
             arr = np.asarray([age, sex, cp, trestbps, chol, fbs, restecg,thalach,exang,oldpeak,slope,ca,thal])
             arr = arr.reshape(1, -1)
-            pred = diabetes_model.predict(arr)
+            pred = heart_model.predict(arr)
             if pred[0]:
                 diagnosis = 'risk of heart disease'
             else:
@@ -196,7 +196,7 @@ if __name__ == "__main__":
         if st.button('test result'):
             arr = np.asarray([fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE])
             arr = arr.reshape(1, -1)
-            pred = diabetes_model.predict(arr)
+            pred = parkinson_model.predict(arr)
             if pred[0]:
                 diagnosis = 'yea parkinson'
             else:

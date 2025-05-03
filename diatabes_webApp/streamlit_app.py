@@ -10,9 +10,9 @@ import streamlit as st
 import numpy as np
 from streamlit_option_menu import option_menu
 
-diabetes_model = pickle.load(open('diatabes_webApp/diatabes_pred_trained.sav', 'rb'))
-heart_model = pickle.load(open('diatabes_webApp/heart_deseas_trained.sav', 'rb'))
-parkinson_model = pickle.load(open('diatabes_webApp/parkinson_trained.sav', 'rb'))
+diabetes_model = pickle.load(open('webApp_heroklu/diatabes_pred_trained.sav', 'rb'))
+heart_model = pickle.load(open('webApp_heroklu/heart_deseas_trained.sav', 'rb'))
+parkinson_model = pickle.load(open('webApp_heroklu/parkinson_trained.sav', 'rb'))
 
 if __name__ == "__main__":
     with st.sidebar:
@@ -114,7 +114,7 @@ if __name__ == "__main__":
         if st.button('test result'):
             arr = np.asarray([age, sex, cp, trestbps, chol, fbs, restecg,thalach,exang,oldpeak,slope,ca,thal])
             arr = arr.reshape(1, -1)
-            pred = diabetes_model.predict(arr)
+            pred = heart_model.predict(arr)
             if pred[0]:
                 diagnosis = 'risk of heart disease'
             else:
@@ -196,7 +196,7 @@ if __name__ == "__main__":
         if st.button('test result'):
             arr = np.asarray([fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE])
             arr = arr.reshape(1, -1)
-            pred = diabetes_model.predict(arr)
+            pred = parkinson_model.predict(arr)
             if pred[0]:
                 diagnosis = 'yea parkinson'
             else:
